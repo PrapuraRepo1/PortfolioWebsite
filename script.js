@@ -69,6 +69,8 @@
     });
   }
 
+  // Trial 2 uses one carefully tuned dark theme.
+
   const year = document.querySelector("#year");
   if (year) year.textContent = String(new Date().getFullYear());
 
