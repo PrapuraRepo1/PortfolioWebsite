@@ -45,9 +45,9 @@
       const email = String(formData.get("email") || "").trim();
       const interest = String(formData.get("interest") || "").trim();
       const message = String(formData.get("message") || "").trim();
-      const subject = `Prapura enquiry — ${interest}`;
+      const subject = `PRAPURA enquiry — ${interest}`;
       const body = [
-        "Hello Prapura,",
+        "Hello PRAPURA,",
         "",
         "I'd like to start a conversation about a project.",
         "",
@@ -71,39 +71,6 @@
 
   const year = document.querySelector("#year");
   if (year) year.textContent = String(new Date().getFullYear());
-
-  const lightbox = document.querySelector("#image-lightbox");
-  const openButtons = document.querySelectorAll(".image-zoom, .overview-image-button");
-  const closeButton = document.querySelector(".lightbox-close");
-  let previousFocus = null;
-
-  const openLightbox = () => {
-    if (!lightbox) return;
-    previousFocus = document.activeElement;
-    lightbox.classList.add("is-open");
-    lightbox.setAttribute("aria-hidden", "false");
-    document.body.classList.add("no-scroll");
-    if (closeButton) closeButton.focus();
-  };
-
-  const closeLightbox = () => {
-    if (!lightbox) return;
-    lightbox.classList.remove("is-open");
-    lightbox.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("no-scroll");
-    if (previousFocus && typeof previousFocus.focus === "function") previousFocus.focus();
-  };
-
-  openButtons.forEach((button) => button.addEventListener("click", openLightbox));
-  if (closeButton) closeButton.addEventListener("click", closeLightbox);
-  if (lightbox) {
-    lightbox.addEventListener("click", (event) => {
-      if (event.target === lightbox) closeLightbox();
-    });
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape" && lightbox.classList.contains("is-open")) closeLightbox();
-    });
-  }
 
 
 })();

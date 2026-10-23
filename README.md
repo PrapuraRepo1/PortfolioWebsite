@@ -1,6 +1,6 @@
-# Prapura — GitHub Pages website
+# PRAPURA — GitHub Pages website
 
-A responsive, static marketing website for Prapura's software consulting, product engineering, AI automation, integrations, and operational intelligence services. It uses plain HTML, CSS, and JavaScript—no build step, framework, package installation, or server required.
+A responsive, static marketing website for PRAPURA's software consulting, product engineering, AI automation, integrations, and operational intelligence services. The visual identity uses the supplied elephant mark, the uppercase PRAPURA wordmark, a warm gold/brown palette, and the exact tagline: INTEGRITY | INNOVATION | ENDURANCE. It uses plain HTML, CSS, and JavaScript—no build step, framework, package installation, or server required.
 
 ## Publish on GitHub Pages
 
@@ -29,20 +29,19 @@ The inquiry form opens the visitor's default email application with a prefilled 
 
 - `index.html` — page content, page metadata, SEO tags, and structured data
 - `styles.css` — responsive visual theme and layouts
-- `script.js` — mobile navigation, contact email draft to `ask@prapura.com`, image viewer, and small motion enhancements
+- `script.js` — mobile navigation, and contact email draft to `ask@prapura.com`
 - `assets/prapura-mark.webp` — cropped mark from the supplied logo, used in the brand header
 - `assets/prapura-mark.png` — favicon source
 - `assets/prapura-logo-original.webp` — optimized version of the supplied logo artwork, also used for social preview metadata
-- `assets/diagnostics-platform-overview.webp` — optimized version of the supplied project architecture overview
 - `CNAME` — custom domain for GitHub Pages
 
 ## Editing the site
 
-Search in `index.html` to change service copy, project details, navigation, or contact-form options. Search for `CONTACT_EMAIL` in `script.js` to change the inquiry destination. All content is static and deploys directly to GitHub Pages.
+Search in `index.html` to change service copy, the generic product concept, navigation, or contact-form options. Search for `CONTACT_EMAIL` in `script.js` to change the inquiry destination. All content is static and deploys directly to GitHub Pages.
 
 ## Notes
 
 - No private API keys or third-party scripts are used.
-- The dashboard illustration is a visual mock-up, not a live product or live data feed.
-- The diagnostics architecture image is presented as a product/workflow blueprint; only describe specific integrations as live after those integrations are implemented and verified.
+- The dashboard and operations illustration are original generic concept mock-ups, not live products or live data feeds. They intentionally avoid client names, client images, client-specific workflows, and real records.
+- Describe integrations and production capabilities as live only after those integrations are implemented and verified.
 - The contact form does not send data to a server. It creates an email draft locally in the visitor's email application.
