@@ -9,13 +9,24 @@
   <link rel="canonical" href="https://www.prapura.com/">
   <link rel="icon" type="image/png" href="assets/prapura-mark.png">
   <link rel="preload" href="assets/prapura-primary-logo.webp" as="image" type="image/webp">
+  <script>
+    (() => {
+      try {
+        const saved = localStorage.getItem('prapura-theme');
+        const preferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.dataset.theme = saved === 'dark' || saved === 'light' ? saved : preferred;
+      } catch (_) {
+        document.documentElement.dataset.theme = 'light';
+      }
+    })();
+  </script>
   <link rel="stylesheet" href="styles.css">
   <title>PRAPURA — Integrity | Innovation | Endurance</title>
   <meta property="og:type" content="website">
   <meta property="og:title" content="PRAPURA — Integrity | Innovation | Endurance">
   <meta property="og:description" content="Custom software, connected systems, and AI-assisted workflows — designed around real business needs.">
   <meta property="og:url" content="https://www.prapura.com/">
-  <meta property="og:image" content="https://www.prapura.com/assets/prapura-logo-original.webp">
+  <meta property="og:image" content="https://www.prapura.com/assets/prapura-primary-logo.webp">
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">
   {
@@ -23,7 +34,7 @@
     "@type": "Organization",
     "name": "PRAPURA",
     "url": "https://www.prapura.com/",
-    "logo": "https://www.prapura.com/assets/prapura-logo-original.webp",
+    "logo": "https://www.prapura.com/assets/prapura-primary-logo.webp",
     "description": "Software consulting and product engineering for custom applications, AI-enabled workflows, integrations, and operational intelligence.",
     "slogan": "INTEGRITY | INNOVATION | ENDURANCE",
     "email": "ask@prapura.com",
@@ -43,8 +54,12 @@
   <header class="site-header" id="top">
     <div class="container nav-wrap">
       <a class="brand" href="#top" aria-label="PRAPURA home">
-        <img src="assets/prapura-primary-logo.webp" alt="PRAPURA — INTEGRITY | INNOVATION | ENDURANCE" class="brand-full-logo" width="138" height="103">
+        <span class="brand-logo-frame">
+          <img src="assets/prapura-primary-logo.webp" alt="PRAPURA — INTEGRITY | INNOVATION | ENDURANCE" class="brand-full-logo" width="300" height="100">
+          <span class="brand-logo-tagline" aria-hidden="true">INTEGRITY&nbsp; | &nbsp;INNOVATION&nbsp; | &nbsp;ENDURANCE</span>
+        </span>
       </a>
+      <button class="theme-toggle theme-toggle--mobile" type="button" data-theme-toggle aria-label="Switch to dark theme" title="Switch to dark theme" aria-pressed="false"><span class="theme-toggle-icon" aria-hidden="true">☾</span></button>
       <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation">
         <span></span><span></span>
       </button>
@@ -52,6 +67,7 @@
         <a href="#services">What we do</a>
         <a href="#approach">Our approach</a>
         <a href="#work">Featured work</a>
+        <button class="theme-toggle theme-toggle--desktop" type="button" data-theme-toggle aria-label="Switch to dark theme" title="Switch to dark theme" aria-pressed="false"><span class="theme-toggle-icon" aria-hidden="true">☾</span></button>
         <a href="#contact" class="nav-cta">Let’s talk <span aria-hidden="true">↗</span></a>
       </nav>
     </div>
@@ -249,7 +265,7 @@
 
   <footer class="site-footer">
     <div class="container footer-main">
-      <a class="brand footer-brand" href="#top" aria-label="PRAPURA, back to top"><img src="assets/prapura-primary-logo.webp" alt="PRAPURA — INTEGRITY | INNOVATION | ENDURANCE" class="brand-full-logo footer-full-logo" width="138" height="103" loading="lazy"></a>
+      <a class="brand footer-brand" href="#top" aria-label="PRAPURA, back to top"><span class="brand-logo-frame"><img src="assets/prapura-primary-logo.webp" alt="PRAPURA — INTEGRITY | INNOVATION | ENDURANCE" class="brand-full-logo footer-full-logo" width="300" height="100" loading="lazy"><span class="brand-logo-tagline" aria-hidden="true">INTEGRITY&nbsp; | &nbsp;INNOVATION&nbsp; | &nbsp;ENDURANCE</span></span></a>
       <p class="footer-thought">Integrity in the details.<br>Innovation in the approach.<br>Endurance in the things we build.</p>
       <div class="footer-links"><a href="#services">Services</a><a href="#approach">Approach</a><a href="#work">Featured work</a><a href="#contact">Contact</a></div>
     </div>

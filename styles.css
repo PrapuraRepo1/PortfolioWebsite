@@ -558,7 +558,7 @@ body { font-size: 16px; line-height: 1.72; color: #153b37; }
 .journey-bottom b { font-size: 14px; }
 .journey-bottom p { color: #506660; font-size: 14px; }
 
-.cta-section { background-color: #123c38; background-image: linear-gradient(110deg, rgba(13,43,41,.97) 0%, rgba(18,60,56,.93) 60%, rgba(18,60,56,.80) 100%), url("assets/kannada-brand-texture.webp"); background-size: cover; background-position: center 46%; }
+.cta-section { background-color: #123c38; background-image: linear-gradient(110deg, rgba(13,43,41,.97) 0%, rgba(18,60,56,.93) 60%, rgba(18,60,56,.80) 100%); background-size: cover; background-position: center 46%; }
 .cta-copy > p { color: #d0dfd9; font-size: 16px; line-height: 1.82; }
 .cta-points span { color: #edf4f0; font-size: 14px; }
 .direct-contact a { font-size: 14px; }
@@ -574,7 +574,7 @@ body { font-size: 16px; line-height: 1.72; color: #153b37; }
 .form-row select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23355a54' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); }
 .form-disclaimer { color: #536761; font-size: 12px; }
 
-.site-footer { color: #f4f7f3; background-color: #0d2b29; background-image: linear-gradient(90deg, rgba(13,43,41,.91), rgba(13,43,41,.83)), url("assets/kannada-brand-texture.webp"); background-size: cover; background-position: center 43%; }
+.site-footer { color: #f4f7f3; background-color: #0d2b29; background-image: linear-gradient(90deg, rgba(13,43,41,.91), rgba(13,43,41,.83)); background-size: cover; background-position: center 43%; }
 .footer-brand .brand-word { color: #f6f1e4; }
 .footer-brand .brand-word small { color: #f1cf85; }
 .footer-thought { color: #d0dfd9; font-size: 16px; }
@@ -628,617 +628,621 @@ body { font-size: 16px; line-height: 1.72; color: #153b37; }
   .footer-thought { font-size: 15px; }
 }
 
-/* ================================================================
-   TRIAL 1 — fixed, full-page Kannada elephant-skin brand backdrop
-   V1 remains unchanged. Text sizes below intentionally favor reading.
-   ================================================================ */
-html { scroll-padding-top: 100px; }
+
+/* PRAPURA brand refresh — new full wordmark, texture-free, high-contrast light theme. */
+:root {
+  color-scheme: light;
+  --ink: #153b37;
+  --ink-soft: #355a54;
+  --muted: #506660;
+  --paper: #f7f8f4;
+  --paper-deep: #edf1eb;
+  --white: #ffffff;
+  --line: #d6e2dc;
+  --gold: #b4822a;
+  --gold-dark: #805719;
+  --teal: #176b63;
+  --teal-pale: #e1efea;
+  --navy: #123c38;
+  --navy-deep: #0d2b29;
+}
+html { background: #f7f8f4; color-scheme: light; }
 body {
-  position: relative;
-  isolation: isolate;
-  background: transparent;
-  color: #163b36;
+  color: #153b37;
+  background: #f7f8f4 !important;
+  background-image: none !important;
   font-size: 17px;
   line-height: 1.75;
 }
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background-image:
-    linear-gradient(rgba(246, 247, 240, .77), rgba(246, 247, 240, .77)),
-    url("assets/kannada-brand-texture.webp");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  transform: translateZ(0);
-}
-
-/* The same texture remains behind every section as the visitor scrolls. */
+body::before, body::after { content: none !important; display: none !important; }
 .site-header {
-  background: rgba(248, 249, 244, .96);
-  border-bottom-color: rgba(21, 59, 55, .18);
+  background: rgba(250, 249, 244, .97) !important;
+  border-bottom: 1px solid rgba(21, 59, 55, .14) !important;
+  box-shadow: 0 4px 18px rgba(21, 59, 55, .045);
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
 }
-.hero,
-.services-section,
-.work-section,
-.journey-section {
-  background: transparent !important;
+.nav-wrap { min-height: 112px; gap: clamp(16px, 2.5vw, 30px); }
+.brand {
+  width: min(300px, 29vw);
+  min-height: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 0 1 auto;
+  gap: 0;
 }
-.hero::before { opacity: .24; }
-.hero-orb { border-color: rgba(128, 87, 25, .22); }
-.approach-section {
-  background: rgba(13, 43, 41, .88) !important;
+.brand-full-logo {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  object-position: left center;
+  flex: 0 1 auto;
+  border-radius: 0;
 }
+.primary-nav { gap: clamp(16px, 2.3vw, 32px); }
+.primary-nav > a { color: #284c45; font-size: 15px; font-weight: 700; }
+.primary-nav > a:hover { color: #805719; }
+.primary-nav .nav-cta { color: #fff !important; background: #153b37 !important; }
+.primary-nav .nav-cta:hover { color: #fff !important; background: #176b63 !important; }
+.hero, .services-section, .work-section, .journey-section {
+  color: #153b37;
+  background: #f7f8f4 !important;
+  background-image: none !important;
+}
+.services-section { background: #f1f4ef !important; }
+.work-section { background: #fbfbf8 !important; }
+.journey-section { background: #f7f8f4 !important; }
+.approach-section { background: #123c38 !important; background-image: none !important; }
 .cta-section {
-  background: rgba(13, 43, 41, .90) !important;
+  color: #f7f3e9;
+  background: #123c38 !important;
   background-image: none !important;
 }
 .site-footer {
-  background: rgba(13, 43, 41, .88) !important;
+  color: #153b37 !important;
+  background: #f1f3ed !important;
   background-image: none !important;
+  border-top: 1px solid #d5ddd5;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
 }
-
-/* Legible body copy and labels across the main content. */
-.eyebrow { font-size: 12px; }
-.hero-intro { color: #344f49; font-size: 18px; line-height: 1.82; }
-.hero-note { color: #3d5851; font-size: 14px; }
-.hero-caption { font-size: 12px; }
-.hero-foot-label { font-size: 12px; }
-.section-heading > p,
-.section-heading-split > p,
-.journey-heading > p { color: #3e5952; font-size: 17px; line-height: 1.8; }
-.service-card p { color: #3f5750; font-size: 16px; line-height: 1.78; }
-.card-index { color: #405951; font-size: 12px; }
-.card-tags span { color: #244b43; font-size: 12px; }
-.services-bottom p { color: #3e5952; font-size: 16px; line-height: 1.75; }
-.approach-lead > p,
-.approach-step p { color: #ecf3ef; font-size: 16px; line-height: 1.8; }
-.approach-step h3 { font-size: 19px; }
-.approach-signature { color: #e4eee8; font-size: 12px; }
-.case-summary { color: #eff5f1; font-size: 16px; line-height: 1.8; }
-.case-badge { font-size: 11px; }
-.case-number { color: #e0ece6; font-size: 11px; }
-.case-capabilities b { font-size: 14px; }
-.case-capabilities small { color: #e3eee8; font-size: 13px; line-height: 1.65; }
-.case-link { font-size: 14px; }
-.image-caption { font-size: 12px; }
-.case-note { color: #344f48; font-size: 14px; line-height: 1.8; }
-.journey-card { background: rgba(255, 255, 255, .44); }
-.journey-card:hover { background: rgba(255, 255, 255, .72); }
-.journey-card-index { color: #405951; font-size: 16px; }
-.journey-card h3 { font-size: 16px; line-height: 1.45; }
-.journey-card p { color: #344f48; font-size: 14px; line-height: 1.75; }
-.journey-card-foot { color: #425b53; font-size: 10px; }
-.journey-bottom { background: rgba(250, 249, 244, .91); }
-.journey-bottom b { font-size: 15px; }
-.journey-bottom p { color: #3e5952; font-size: 14px; line-height: 1.75; }
-.cta-copy > p { color: #eff5f1; font-size: 17px; line-height: 1.82; }
-.cta-points span { color: #f3f7f4; font-size: 15px; }
-.direct-contact a { font-size: 15px; }
-.direct-contact small { color: #e4eee8; font-size: 11px; }
-.contact-kicker { font-size: 12px; }
-.contact-card h3 { font-size: 25px; }
-.contact-helper { color: #3e5952; font-size: 15px; line-height: 1.7; }
-.form-row label { color: #244b43; font-size: 15px; }
-.form-row input,
-.form-row select,
-.form-row textarea { min-height: 48px; color: #163b36; font-size: 16px; }
-.form-row textarea { min-height: 112px; }
-.form-disclaimer { color: #405951; font-size: 12px; }
-.footer-thought { color: #ecf3ef; font-size: 17px; }
-.footer-links a, .footer-bottom { color: #ecf3ef; font-size: 14px; }
-.footer-bottom { font-size: 13px; }
-
-/* Keep interface mock-ups readable without changing their illustrative content. */
+.footer-brand { width: min(290px, 30vw); min-height: 0; }
+.footer-full-logo { width: 100%; max-width: 290px; height: auto; }
+.footer-thought { color: #355a54 !important; font-size: 16px; line-height: 1.7; }
+.footer-links a, .footer-bottom { color: #355a54 !important; }
+.footer-bottom { border-top-color: #d0d9d0 !important; }
+.footer-links a:hover, .footer-bottom a:hover { color: #805719 !important; }
+.hero-intro, .section-heading > p, .section-heading-split > p,
+.journey-heading > p, .service-card p, .services-bottom p,
+.journey-card p, .journey-bottom p { color: #344f49; }
+.hero h1, .section-heading h2, .journey-heading h2 { color: #173b37; }
+.eyebrow, .hero-foot-label, .card-index, .journey-card-index { color: #805719; }
+.hero-caption { color: #405951; }
+.button-primary { color: #fff; background: #153b37; }
+.button-primary:hover { color: #fff; background: #176b63; }
+.text-link { color: #153b37; }
+.contact-card { background: #fff; color: #153b37; }
+.contact-card h3, .contact-kicker { color: #173b37; }
+.contact-helper, .form-row label, .form-disclaimer { color: #355a54; }
+.form-row input, .form-row select, .form-row textarea { color: #153b37; background: #fff; border-color: #b9cbc2; }
+.form-row input::placeholder, .form-row textarea::placeholder { color: #657b73; opacity: 1; }
+/* The dashboard is illustrative, but its tiny UI labels still need useful contrast. */
 .ui-kicker, .tiny-muted, .metric-card > span, .metric-card small,
 .task-line small, .task-tag, .status-pill, .product-brand small,
 .demo-pill, .product-intro small, .date-pill, .product-metric > span,
 .product-metric small, .product-panel-head, .workflow-stage small,
 .product-panel-head span, .queue-item b, .queue-item small,
-.queue-item em, .product-assistant > small, .product-assistant p {
-  font-size: 10px;
+.queue-item em, .product-assistant > small, .product-assistant p { font-size: 10px; }
+.window-brand { font-size: 12px; }
+.metric-card > span, .metric-card small { line-height: 1.4; }
+@media (max-width: 900px) {
+  .nav-wrap { min-height: 92px; gap: 12px; }
+  .brand { width: min(255px, 28vw); }
+  .primary-nav { gap: 14px; }
+  .primary-nav > a { font-size: 14px; }
 }
-.journey-step small, .workflow-stage small { font-size: 9px; }
-
-@media (max-width: 780px) {
-  body { font-size: 16px; }
-  body::before {
-    background-position: center center;
-    background-size: cover;
-  }
-  .hero-intro { font-size: 17px; }
-  .service-card p,
-  .approach-lead > p,
-  .approach-step p,
-  .section-heading > p,
-  .section-heading-split > p,
-  .journey-heading > p,
-  .cta-copy > p { font-size: 16px; }
-  .approach-step h3 { font-size: 17px; }
-  .journey-card p { font-size: 14px; }
-  .journey-card h3 { font-size: 15px; }
-  .footer-links a, .footer-bottom { font-size: 14px; }
-}
-@media (max-width: 480px) {
-  .brand-word small { font-size: 8px; }
-  .eyebrow { font-size: 11px; }
-  .hero-intro { font-size: 16px; }
-  .section-heading h2,
-  .approach-lead h2,
-  .cta-copy h2,
-  .journey-heading h2 { font-size: clamp(34px, 9vw, 39px); }
-  .service-card p { font-size: 15px; }
-  .approach-step p { font-size: 14px; }
-  .journey-card h3 { font-size: 15px; }
-  .journey-card p { font-size: 13px; }
-  .journey-card-foot { font-size: 10px; }
-  .contact-card h3 { font-size: 22px; }
-  .footer-thought { font-size: 16px; }
-}
-
-
-/* TRIAL 2 — system-aware dark/light themes with a compact symbolic switch. */
-:root {
-  color-scheme: light;
-  --ink: #153b37; --ink-soft: #355a54; --muted: #3f5750;
-  --paper: #f7f5ee; --paper-deep: #e8eee7; --white: #fffdf7;
-  --line: #cbd8d1; --gold: #c69a3e; --gold-dark: #805719;
-  --teal: #176b63; --teal-pale: #e1efea; --navy: #153b37; --navy-deep: #0d2b29;
-}
-html { color-scheme: light; }
-body { font-size: 16px; }
-.theme-toggle {
-  position: relative; flex: 0 0 auto; width: 46px; height: 46px; padding: 3px;
-  display: inline-flex; align-items: center; justify-content: space-between; gap: 0;
-  border: 1px solid rgba(180,130,42,.62); border-radius: 50%; cursor: pointer;
-  color: #f7f5ee; background: #163b36; box-shadow: 0 3px 12px rgba(13,43,41,.18);
-  transition: transform .2s ease, background .2s ease, border-color .2s ease;
-}
-.theme-toggle:hover { transform: translateY(-1px); }
-.theme-toggle span { display: grid; place-items: center; width: 19px; height: 19px; border-radius: 50%; font-size: 17px; line-height: 1; }
-.theme-toggle .theme-sun { color: #e5bf64; }
-.theme-toggle .theme-moon { color: #fffdf7; }
-.theme-toggle::after { content: ""; position: absolute; width: 21px; height: 21px; left: 2px; top: 2px; border-radius: 50%; background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.32); pointer-events: none; }
-.primary-nav > a { font-size: 14px; }
-.button, .text-link { font-size: 14px; }
-.brand-word small { font-size: 8px; }
-.eyebrow, .hero-caption, .hero-foot-label, .card-index, .card-tags span { font-size: 13px; }
-.service-card p, .services-bottom p, .approach-lead > p, .approach-step p,
-.case-summary, .journey-heading > p, .journey-card p, .footer-links a, .footer-bottom,
-.form-row label, .form-row input, .form-row select, .form-row textarea { font-size: 16px; }
-.dashboard-heading h3 { font-size: 17px; }
-.journey-card h3 { font-size: 17px; }
-.journey-card-foot { font-size: 12px; }
-body::before { background-image: linear-gradient(rgba(246,247,240,.77),rgba(246,247,240,.77)),url("assets/kannada-brand-texture.webp"); }
-.site-header { background: rgba(248,249,244,.94); }
-.hero, .services-section, .work-section, .journey-section { background: rgba(248,249,244,.18) !important; }
-
-@media (prefers-color-scheme: dark) {
-  html:not([data-theme="light"]) { color-scheme: dark; }
-  html:not([data-theme="light"]) body { color: #f0f2ec; background: #121816; }
-  html:not([data-theme="light"]) body::before { background-image: linear-gradient(rgba(9,15,14,.78),rgba(9,15,14,.78)),url("assets/kannada-brand-texture.webp"); }
-  html:not([data-theme="light"]) .site-header { background: rgba(16,25,23,.94); border-bottom-color: rgba(230,194,105,.22); }
-  html:not([data-theme="light"]) .brand-word, html:not([data-theme="light"]) .brand-word small { color: #e6c16a; }
-  html:not([data-theme="light"]) .primary-nav > a { color: #e4e8e1; }
-  html:not([data-theme="light"]) .primary-nav .nav-cta { color: #142b27; background: #e3bd62; }
-  html:not([data-theme="light"]) .menu-toggle { border-color: #52615a; }
-  html:not([data-theme="light"]) .menu-toggle span { background: #f0f2ec; }
-  html:not([data-theme="light"]) .hero, html:not([data-theme="light"]) .services-section,
-  html:not([data-theme="light"]) .work-section, html:not([data-theme="light"]) .journey-section { background: rgba(13,20,18,.58) !important; }
-  html:not([data-theme="light"]) .hero::before { background: linear-gradient(145deg,rgba(30,57,49,.34),rgba(89,65,28,.16)); }
-  html:not([data-theme="light"]) .hero h1, html:not([data-theme="light"]) .section-heading h2,
-  html:not([data-theme="light"]) .section-heading-split h2, html:not([data-theme="light"]) .journey-heading h2,
-  html:not([data-theme="light"]) .service-card h3, html:not([data-theme="light"]) .journey-card h3,
-  html:not([data-theme="light"]) .hero-note, html:not([data-theme="light"]) .text-link { color: #f5f2e8; }
-  html:not([data-theme="light"]) .hero-intro, html:not([data-theme="light"]) .section-heading > p,
-  html:not([data-theme="light"]) .section-heading-split > p, html:not([data-theme="light"]) .journey-heading > p,
-  html:not([data-theme="light"]) .service-card p, html:not([data-theme="light"]) .services-bottom p,
-  html:not([data-theme="light"]) .journey-card p { color: #d7dfd8; }
-  html:not([data-theme="light"]) .service-card, html:not([data-theme="light"]) .journey-card,
-  html:not([data-theme="light"]) .journey-cards, html:not([data-theme="light"]) .promise,
-  html:not([data-theme="light"]) .case-card { background-color: rgba(24,35,31,.88); border-color: rgba(214,191,130,.28); }
-  html:not([data-theme="light"]) .service-card, html:not([data-theme="light"]) .journey-card { color: #f0f2ec; }
-  html:not([data-theme="light"]) .case-note, html:not([data-theme="light"]) .case-card h3 { color: #f4f1e8; }
-  html:not([data-theme="light"]) .form-row input, html:not([data-theme="light"]) .form-row select,
-  html:not([data-theme="light"]) .form-row textarea { color: #f4f1e8; background-color: #1c2823; border-color: #53645a; }
-  html:not([data-theme="light"]) .form-row label { color: #e0e7df; }
-  html:not([data-theme="light"]) .theme-toggle { color: #e9c66f; background: #29312d; }
-  html:not([data-theme="light"]) .theme-toggle::after { left: 21px; background: rgba(230,193,106,.2); border-color: rgba(230,193,106,.55); }
-}
-html[data-theme="dark"] { color-scheme: dark; }
-html[data-theme="dark"] body { color: #f0f2ec; background: #121816; }
-html[data-theme="dark"] body::before { background-image: linear-gradient(rgba(9,15,14,.78),rgba(9,15,14,.78)),url("assets/kannada-brand-texture.webp"); }
-html[data-theme="dark"] .site-header { background: rgba(16,25,23,.94); border-bottom-color: rgba(230,194,105,.22); }
-html[data-theme="dark"] .brand-word, html[data-theme="dark"] .brand-word small { color: #e6c16a; }
-html[data-theme="dark"] .primary-nav > a { color: #e4e8e1; }
-html[data-theme="dark"] .primary-nav .nav-cta { color: #142b27; background: #e3bd62; }
-html[data-theme="dark"] .menu-toggle { border-color: #52615a; }
-html[data-theme="dark"] .menu-toggle span { background: #f0f2ec; }
-html[data-theme="dark"] .hero, html[data-theme="dark"] .services-section, html[data-theme="dark"] .work-section, html[data-theme="dark"] .journey-section { background: rgba(13,20,18,.58) !important; }
-html[data-theme="dark"] .hero h1, html[data-theme="dark"] .section-heading h2, html[data-theme="dark"] .section-heading-split h2, html[data-theme="dark"] .journey-heading h2, html[data-theme="dark"] .service-card h3, html[data-theme="dark"] .journey-card h3, html[data-theme="dark"] .hero-note, html[data-theme="dark"] .text-link { color: #f5f2e8; }
-html[data-theme="dark"] .hero-intro, html[data-theme="dark"] .section-heading > p, html[data-theme="dark"] .section-heading-split > p, html[data-theme="dark"] .journey-heading > p, html[data-theme="dark"] .service-card p, html[data-theme="dark"] .services-bottom p, html[data-theme="dark"] .journey-card p { color: #d7dfd8; }
-html[data-theme="dark"] .service-card, html[data-theme="dark"] .journey-card, html[data-theme="dark"] .journey-cards, html[data-theme="dark"] .promise, html[data-theme="dark"] .case-card { background-color: rgba(24,35,31,.88); border-color: rgba(214,191,130,.28); }
-html[data-theme="dark"] .form-row input, html[data-theme="dark"] .form-row select, html[data-theme="dark"] .form-row textarea { color: #f4f1e8; background-color: #1c2823; border-color: #53645a; }
-html[data-theme="dark"] .form-row label { color: #e0e7df; }
-html[data-theme="dark"] .theme-toggle { color: #e9c66f; background: #29312d; }
-html[data-theme="dark"] .theme-toggle::after { left: 21px; background: rgba(230,193,106,.2); border-color: rgba(230,193,106,.55); }
-html[data-theme="light"] { color-scheme: light; }
-@media (max-width: 780px) {
-  .theme-toggle { width: 42px; height: 42px; order: 2; }
-  .primary-nav > a { font-size: 15px; }
-  .journey-card p { font-size: 15px; }
-}
-@media (max-width: 480px) {
-  .theme-toggle { margin-left: auto; }
-  .service-card p, .approach-step p, .journey-card p { font-size: 15px; }
-  .journey-card h3 { font-size: 16px; }
-  .journey-card-foot { font-size: 12px; }
-}
-
-
-/* FINAL TRIAL 2 POLISH — exact teal-and-gold logo, full-page texture, compact theme control. */
-.site-header { background: rgba(248,249,244,.82) !important; }
-.brand { width: 150px; min-height: 86px; display: flex; align-items: center; justify-content: flex-start; }
-.brand-full-logo { width: 138px; height: 103px; object-fit: contain; flex: 0 0 auto; }
-.footer-full-logo { width: 156px; height: 116px; }
-.nav-wrap { min-height: 94px; gap: 18px; }
-.theme-toggle { width: 34px !important; height: 34px !important; padding: 0 !important; display: grid !important; place-items: center !important; border-radius: 50% !important; }
-.theme-toggle span { position: absolute; width: 100% !important; height: 100% !important; display: grid; place-items: center; font-size: 17px !important; }
-.theme-toggle .theme-sun { opacity: 1; }
-.theme-toggle .theme-moon { opacity: 0; }
-.theme-toggle::after { width: 0 !important; height: 0 !important; display: none !important; }
-html[data-theme="dark"] .theme-toggle .theme-sun { opacity: 0; }
-html[data-theme="dark"] .theme-toggle .theme-moon { opacity: 1; }
-@media (prefers-color-scheme: dark) {
- html:not([data-theme="light"]) .theme-toggle .theme-sun { opacity: 0; }
- html:not([data-theme="light"]) .theme-toggle .theme-moon { opacity: 1; }
-}
-/* The same fixed Kannada elephant-skin image remains visible behind every section. */
-body::before { background-position: center center; background-size: cover; }
-.hero, .services-section, .work-section, .journey-section,
-.approach-section, .cta-section, .site-footer {
- background-image: none !important;
-}
-.hero, .services-section, .work-section, .journey-section {
- background-color: rgba(248,249,244,.25) !important;
-}
-.approach-section { background-color: rgba(13,43,41,.78) !important; }
-.cta-section { background-color: rgba(13,43,41,.76) !important; }
-.site-footer {
- background-color: rgba(13,43,41,.58) !important;
- border-top: 1px solid rgba(230,194,105,.28);
- -webkit-backdrop-filter: blur(5px);
- backdrop-filter: blur(5px);
-}
-/* Keep logo panel calm enough for the supplied image while allowing the texture around it to show. */
-.brand-full-logo { border-radius: 4px; }
-html[data-theme="dark"] .site-header { background: rgba(16,25,23,.78) !important; }
-html[data-theme="dark"] .hero, html[data-theme="dark"] .services-section,
-html[data-theme="dark"] .work-section, html[data-theme="dark"] .journey-section {
- background-color: rgba(9,15,14,.54) !important;
-}
-html[data-theme="dark"] .site-footer { background-color: rgba(9,22,19,.52) !important; }
-@media (prefers-color-scheme: dark) {
- html:not([data-theme="light"]) .hero, html:not([data-theme="light"]) .services-section,
- html:not([data-theme="light"]) .work-section, html:not([data-theme="light"]) .journey-section {
-  background-color: rgba(9,15,14,.54) !important;
- }
- html:not([data-theme="light"]) .site-footer { background-color: rgba(9,22,19,.52) !important; }
-}
-@media (max-width: 780px) {
- .brand { width: 110px; min-height: 78px; }
- .brand-full-logo { width: 104px; height: 78px; }
- .footer-full-logo { width: 140px; height: 104px; }
- .nav-wrap { min-height: 78px; gap: 10px; }
- .theme-toggle { width: 32px !important; height: 32px !important; }
-}
-@media (max-width: 480px) {
- .brand { width: 90px; min-height: 68px; }
- .brand-full-logo { width: 88px; height: 66px; }
- .nav-wrap { min-height: 70px; }
- .footer-full-logo { width: 130px; height: 97px; }
-}
-
-
-/* TRIAL 2 — single polished dark theme; fixed Kannada elephant-skin backdrop */
-:root {
-  color-scheme: dark;
-  --ink: #f4f1e8;
-  --ink-soft: #d8e0da;
-  --muted: #c2cec7;
-  --paper: #171c1a;
-  --paper-deep: #202824;
-  --white: #f5f2e9;
-  --line: rgba(220, 225, 215, .19);
-  --gold: #d9b65d;
-  --gold-dark: #e3c66f;
-  --teal: #4eaaa0;
-  --teal-pale: rgba(54, 130, 120, .22);
-  --navy: #173b38;
-  --navy-deep: #111917;
-}
-html { background: #171c1a; }
-body {
-  color: #f4f1e8;
-  background-color: #171c1a;
-  background-image: linear-gradient(rgba(12, 17, 15, .60), rgba(12, 17, 15, .60)), url("assets/kannada-brand-texture.webp");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  font-size: 17px;
-  line-height: 1.72;
-}
-body::before, body::after { content: none; }
-.site-header {
-  background: rgba(19, 26, 23, .76);
-  border-bottom-color: rgba(225, 198, 111, .24);
-  backdrop-filter: blur(14px);
-}
-.brand-full-logo { width: 138px; height: auto; object-fit: contain; }
-.primary-nav > a { color: #f0eee5; font-size: 14px; }
-.primary-nav > a:hover { color: #e3c66f; }
-.primary-nav .nav-cta { color: #111917; background: #d9b65d; }
-.primary-nav .nav-cta:hover { color: #111917; background: #ecd58d; }
-.hero h1, .section-heading h2, .journey-heading h2 { color: #f7f3e9; }
-.hero-intro, .section-heading > p, .section-heading-split > p,
-.journey-heading > p, .hero-note { color: #e0e5dc; }
-.eyebrow, .hero-foot-label, .card-index, .journey-card-index { color: #e3c66f; }
-.hero-orb { opacity: .16; }
-.art-grid { opacity: .18; }
-.dashboard-window { color: #20312d; background: #f5f2e9; }
-.hero-caption { color: #f0ead9; font-size: 12px; }
-.hero-foot { border-top-color: rgba(239, 233, 214, .23); }
-.promise { color: #f0eee5; }
-.promise span { color: #e3c66f; }
-.services-section, .journey-section { background: rgba(20, 27, 24, .62); }
-.service-card, .journey-card, .journey-bottom, .services-bottom {
-  color: #f4f1e8;
-  background: rgba(25, 34, 30, .78);
-  border-color: rgba(225, 232, 220, .20);
-}
-.service-card:hover, .journey-card:hover { background: rgba(35, 49, 43, .88); }
-.service-card h3, .journey-card h3, .journey-bottom b { color: #f7f3e9; }
-.service-card p, .journey-card p, .journey-bottom p, .services-bottom p { color: #d6dfd8; }
-.card-tags span { color: #f0e6c7; background: rgba(217, 182, 93, .13); border: 1px solid rgba(217, 182, 93, .22); }
-.service-icon.icon-gold, .service-icon.icon-teal, .service-icon.icon-blue { background: rgba(217, 182, 93, .13); color: #e3c66f; }
-.approach-section { background: rgba(17, 27, 24, .78); }
-.case-study { background: rgba(19, 43, 39, .88); border-color: rgba(225, 198, 111, .24); }
-.case-summary, .case-capabilities small, .case-note { color: #dce4dc; }
-.case-capabilities b { color: #fff9e9; }
-.image-caption, .image-caption span:last-child { color: #e2e7de; }
-.overview-frame { background: #f5f2e9; border-color: rgba(225, 198, 111, .32); }
-.journey-cards { border-color: rgba(225, 232, 220, .22); }
-.journey-card { border-right-color: rgba(225, 232, 220, .18); }
-.journey-bottom-symbol { color: #e3c66f; background: rgba(217, 182, 93, .16); }
-.cta-section {
-  color: #f7f3e9;
-  background-color: rgba(16, 26, 23, .78);
-  background-image: linear-gradient(110deg, rgba(15, 23, 20, .78), rgba(18, 48, 43, .72)), url("assets/kannada-brand-texture.webp");
-  background-size: cover;
-  background-position: center 46%;
-}
-.cta-copy > p, .cta-points span, .direct-contact a { color: #e8eee7; }
-.cta-points i, .direct-contact a > span:first-child { color: #e3c66f; background: rgba(217, 182, 93, .13); border-color: rgba(217, 182, 93, .24); }
-.contact-card { color: #f4f1e8; background: rgba(24, 33, 29, .86); border: 1px solid rgba(230, 210, 153, .24); box-shadow: 0 18px 50px rgba(0,0,0,.25); backdrop-filter: blur(10px); }
-.contact-card h3, .contact-kicker { color: #f4e4b1; }
-.contact-helper, .form-row label, .form-disclaimer { color: #d8e0d8; }
-.form-row input, .form-row select, .form-row textarea { color: #f7f3e9; background: rgba(12, 19, 16, .72); border-color: rgba(221, 226, 215, .32); font-size: 16px; }
-.form-row input::placeholder, .form-row textarea::placeholder { color: #b9c7bd; opacity: 1; }
-.form-row select { background-color: rgba(12, 19, 16, .72); }
-.form-disclaimer { color: #cbd6ce; }
-.site-footer {
-  color: #f4f1e8;
-  background: linear-gradient(90deg, rgba(15, 22, 19, .70), rgba(15, 22, 19, .58));
-  backdrop-filter: blur(5px);
-}
-.footer-brand .brand-word, .footer-brand .brand-word small { color: #f4e4b1; }
-.footer-thought, .footer-links a, .footer-bottom { color: #e1e8df; }
-.footer-bottom { border-top-color: rgba(239, 233, 214, .24); }
-.button-primary { color: #141a16; background: #d9b65d; }
-.button-primary:hover { background: #ecd58d; }
-.text-link { color: #f2eee2; }
-::selection { color: #111917; background: #e3c66f; }
-
-/* Comfortable reading sizes: retain hierarchy, avoid tiny labels on real content. */
-.eyebrow { font-size: 12px; }
-.hero-note, .promise, .section-heading > p, .section-heading-split > p,
-.journey-heading > p, .service-card p, .services-bottom p,
-.approach-lead > p, .approach-step p, .case-summary, .journey-card p,
-.journey-bottom p, .cta-copy > p { font-size: 16px; }
-.primary-nav > a, .button, .text-link, .case-link, .direct-contact a { font-size: 15px; }
-.service-card h3 { font-size: clamp(20px, 2vw, 23px); }
-.journey-card h3 { font-size: 16px; }
-.journey-card-foot, .card-index, .case-number, .case-badge, .contact-kicker,
-.direct-contact small, .form-disclaimer, .footer-bottom { font-size: 12px; }
-.form-row label { font-size: 15px; }
-.form-row input, .form-row select, .form-row textarea { min-height: 46px; }
-.form-row textarea { min-height: 125px; }
-.footer-links a, .footer-bottom { font-size: 14px; }
-.footer-thought { font-size: 17px; }
-.theme-toggle { display: none !important; }
-
 @media (max-width: 760px) {
-  body { font-size: 16px; }
-  .container { width: min(var(--container), calc(100% - 34px)); }
-  .brand-full-logo { width: 112px; }
-  .hero-intro { font-size: 17px; }
-  .eyebrow { font-size: 11px; }
-  .hero-caption { font-size: 11px; }
-  .promise { font-size: 13px; }
-  .journey-card p, .approach-step p { font-size: 15px; }
-  .site-footer { background: linear-gradient(90deg, rgba(15, 22, 19, .68), rgba(15, 22, 19, .58)); }
+  .nav-wrap { min-height: 82px; }
+  .brand { width: min(235px, calc(100vw - 112px)); }
+  .brand-full-logo { width: 100%; }
+  .footer-brand { width: min(270px, 82vw); }
+  .footer-full-logo { max-width: 270px; }
+  .primary-nav { background: #faf9f4 !important; border-bottom: 1px solid #d8dfd6 !important; box-shadow: 0 14px 25px rgba(21,59,55,.10) !important; }
+  .primary-nav > a { color: #284c45 !important; text-shadow: none; }
+  .primary-nav .nav-cta { color: #fff !important; background: #153b37 !important; }
+  .site-footer { background: #f1f3ed !important; }
+}
+@media (max-width: 380px) {
+  .brand { width: min(205px, calc(100vw - 98px)); }
+  .nav-wrap { gap: 8px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
 
-/* FINAL ACCESSIBILITY + BRAND BACKDROP PASS
-   Use the supplied Kannada elephant-skin artwork as the real page backdrop,
-   while keeping copy panels and the navigation ribbon high contrast. */
-html {
-  background: #0b100e;
-  scroll-padding-top: 112px;
-}
-body {
-  background-color: #0b100e !important;
-  background-image:
-    linear-gradient(rgba(7, 12, 10, .35), rgba(7, 12, 10, .35)),
-    url("assets/prapura-kannada-elephant-skin.jpg") !important;
-  background-size: cover !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
-  background-attachment: fixed !important;
-}
-body::before, body::after { content: none !important; display: none !important; }
-
-/* A darker, stable ribbon prevents the textured backdrop from competing with nav text. */
-.site-header {
-  background: rgba(8, 14, 12, .97) !important;
-  border-bottom: 1px solid rgba(226, 194, 101, .42) !important;
-  -webkit-backdrop-filter: blur(14px);
-  backdrop-filter: blur(14px);
-  box-shadow: 0 5px 18px rgba(0, 0, 0, .22);
-}
-.nav-wrap { min-height: 94px; gap: 24px; }
-.primary-nav {
-  align-items: center;
-  gap: clamp(18px, 2.4vw, 34px);
-}
-.primary-nav > a {
-  color: #fff8e9 !important;
-  font-size: 16px !important;
-  font-weight: 750 !important;
-  line-height: 1.4;
-  letter-spacing: .01em;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, .55);
-  padding: 10px 0;
-  text-decoration: none;
-  text-underline-offset: 6px;
-  text-decoration-thickness: 2px;
-  transition: color .18s ease, text-decoration-color .18s ease, background-color .18s ease;
-}
-.primary-nav > a:hover,
-.primary-nav > a:focus-visible {
-  color: #f3d783 !important;
-  text-decoration: underline;
-  text-decoration-color: #d9b65d;
-}
-.primary-nav > a:focus-visible {
-  outline: 2px solid #f3d783;
-  outline-offset: 4px;
-  border-radius: 3px;
-}
-.primary-nav .nav-cta {
-  color: #101713 !important;
-  background: #e8c767 !important;
-  border: 1px solid #f6dfa0;
-  border-radius: 7px;
-  padding: 13px 19px !important;
-  min-height: 46px;
-  font-size: 15px !important;
-  font-weight: 800 !important;
-  letter-spacing: .015em;
-  text-shadow: none;
-  box-shadow: 0 2px 0 rgba(0, 0, 0, .22);
-}
-.primary-nav .nav-cta:hover,
-.primary-nav .nav-cta:focus-visible {
-  color: #101713 !important;
-  background: #f5dc8b !important;
-  text-decoration: none;
+/* ================================================================
+   PRAPURA VERSION 3 — accessible theme switch and logo treatment
+   ================================================================ */
+:root {
+  --header-surface: #faf9f4;
+  --logo-card: #faf9f4;
+  --surface-main: #f7f8f4;
+  --surface-raised: #ffffff;
+  --surface-soft: #f1f4ef;
+  --copy-main: #153b37;
+  --copy-secondary: #344f49;
+  --copy-muted: #506660;
+  --stroke-strong: #d0dcd5;
+  --switch-ink: #284c45;
+  --switch-stroke: #9bafa5;
 }
 
-/* Let the image show around the content; preserve dark translucent reading surfaces. */
-.hero, .services-section, .work-section, .journey-section {
-  background-image: none !important;
-  background-color: rgba(8, 14, 12, .38) !important;
-}
-.approach-section {
-  background-image: none !important;
-  background-color: rgba(8, 18, 15, .79) !important;
-}
-.cta-section {
-  background-image: linear-gradient(rgba(8, 18, 15, .77), rgba(8, 18, 15, .77)),
-    url("assets/prapura-kannada-elephant-skin.jpg") !important;
-  background-size: cover !important;
-  background-position: center 58% !important;
-}
-.site-footer {
-  background-image: linear-gradient(rgba(8, 14, 12, .77), rgba(8, 14, 12, .77)),
-    url("assets/prapura-kannada-elephant-skin.jpg") !important;
-  background-size: cover !important;
-  background-position: center 66% !important;
-}
-
-@media (max-width: 900px) {
-  .nav-wrap { min-height: 82px; gap: 12px; }
-  .primary-nav { gap: 17px; }
-  .primary-nav > a { font-size: 15px !important; }
-  .primary-nav .nav-cta { padding: 12px 15px !important; }
-}
-@media (max-width: 760px) {
-  html { scroll-padding-top: 86px; }
-  .nav-wrap { min-height: 78px; }
-  .primary-nav {
-    background: rgba(8, 14, 12, .99) !important;
-    border-bottom: 1px solid rgba(226, 194, 101, .35) !important;
-    box-shadow: 0 16px 22px rgba(0, 0, 0, .38) !important;
-    padding: 10px 22px 20px !important;
-  }
-  .primary-nav > a {
-    color: #fff8e9 !important;
-    font-size: 16px !important;
-    font-weight: 750 !important;
-    padding: 13px 4px !important;
-    border-bottom: 1px solid rgba(244, 239, 222, .12);
-  }
-  .primary-nav .nav-cta {
-    margin-top: 10px !important;
-    min-height: 48px;
-    border-bottom: 1px solid #f6dfa0 !important;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .primary-nav > a { transition: none; }
-}
-
-/* Mobile-only adjustment: fit the complete Kannada elephant-skin artwork across the screen. */
-@media (max-width: 760px) {
-  body {
-    background-size: 100% 100%, 100% auto !important;
-    background-position: center top, center top !important;
-    background-repeat: no-repeat, no-repeat !important;
-    background-attachment: scroll, scroll !important;
-  }
-}
-
-
-/* PRAPURA brand image: show the complete Kannada lettering once, without cropping. */
-body::before { background-image: none !important; }
-.cta-section, .site-footer { background-image: none !important; }
-.brand-heritage {
-  width: 100%;
-  overflow: hidden;
-  background: #111513;
-  line-height: 0;
-  text-align: center;
-}
-.brand-heritage img {
+/* The image wordmark stays intact. Its dark micro-tagline is covered and
+   re-set as live text so it matches the wordmark and remains legible in both themes. */
+.footer-brand .brand-logo-frame { --logo-card: #f1f3ed; }
+.brand-logo-frame {
+  position: relative;
   display: block;
   width: 100%;
-  height: auto;
-  max-height: 520px;
-  object-fit: contain;
-  object-position: center;
-  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 5px;
+  background: var(--logo-card);
 }
+.brand-logo-tagline {
+  position: absolute;
+  top: 66.5%;
+  left: 25.5%;
+  display: block;
+  width: 73.8%;
+  overflow: hidden;
+  color: #805719;
+  font-size: clamp(4.4px, 1.45vw, 8.4px);
+  font-weight: 850;
+  letter-spacing: .015em;
+  line-height: 1.18;
+  text-align: center;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.brand-logo-frame::after {
+  position: absolute;
+  top: 64%;
+  left: 25%;
+  width: 74.5%;
+  height: 15.5%;
+  content: "";
+  background: var(--logo-card, var(--header-surface));
+  pointer-events: none;
+}
+.brand-logo-tagline { z-index: 1; }
+
+/* The circle is deliberately small and quiet, but has a useful focus ring. */
+.theme-toggle {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  place-items: center;
+  padding: 0;
+  color: var(--switch-ink);
+  background: transparent;
+  border: 1px solid var(--switch-stroke);
+  border-radius: 50%;
+  cursor: pointer;
+  line-height: 1;
+  transition: color .18s ease, background .18s ease, border-color .18s ease, transform .18s ease;
+}
+.theme-toggle:hover { transform: translateY(-1px); background: rgba(128, 87, 25, .08); }
+.theme-toggle-icon { display: block; font-family: Arial, sans-serif; font-size: 17px; line-height: 1; }
+.theme-toggle--mobile { display: none; }
+.primary-nav .theme-toggle--desktop { margin-inline: -7px -5px; }
+
+/* Clear, reusable dark palette. */
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --ink: #edf4f1;
+  --ink-soft: #c7d9d1;
+  --muted: #bdcdc7;
+  --paper: #101b1d;
+  --paper-deep: #182829;
+  --white: #172729;
+  --line: #324846;
+  --gold: #e2bd70;
+  --gold-dark: #e5c27c;
+  --teal: #5db9a8;
+  --teal-pale: #223b37;
+  --navy: #0d2425;
+  --navy-deep: #081819;
+  --header-surface: #0d1a1c;
+  --logo-card: #f7f0df;
+  --surface-main: #101b1d;
+  --surface-raised: #172729;
+  --surface-soft: #1a2b2c;
+  --copy-main: #edf4f1;
+  --copy-secondary: #ccdad4;
+  --copy-muted: #b5c7c0;
+  --stroke-strong: #354b49;
+  --switch-ink: #e5c27b;
+  --switch-stroke: #5a766e;
+}
+
+html[data-theme="dark"], html[data-theme="dark"] body {
+  color: var(--copy-main);
+  background: var(--surface-main) !important;
+}
+html[data-theme="dark"] .site-header {
+  background: rgba(13, 26, 28, .96) !important;
+  border-bottom: 1px solid #2a4140 !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, .20);
+}
+html[data-theme="dark"] .brand-logo-frame { background: var(--logo-card); }
+html[data-theme="dark"] .brand-logo-frame::after { background: var(--logo-card); }
+html[data-theme="dark"] .brand-logo-tagline { color: #805719; }
+html[data-theme="dark"] .primary-nav > a { color: #d9e6e0 !important; }
+html[data-theme="dark"] .primary-nav > a:hover { color: #edce87 !important; }
+html[data-theme="dark"] .primary-nav .nav-cta { color: #fff !important; background: #216f66 !important; }
+html[data-theme="dark"] .primary-nav .nav-cta:hover { background: #2a897d !important; }
+html[data-theme="dark"] .theme-toggle { color: #ecd18f; border-color: #648078; }
+html[data-theme="dark"] .theme-toggle:hover { background: rgba(226, 189, 112, .12); }
+html[data-theme="dark"] .menu-toggle { color: #e9f0ec; border-color: #425a55; }
+html[data-theme="dark"] .menu-toggle span { background: #e9f0ec; }
+
+html[data-theme="dark"] .hero,
+html[data-theme="dark"] .services-section,
+html[data-theme="dark"] .work-section,
+html[data-theme="dark"] .journey-section {
+  color: var(--copy-main) !important;
+  background: var(--surface-main) !important;
+  background-image: none !important;
+}
+html[data-theme="dark"] .services-section { background: #142224 !important; }
+html[data-theme="dark"] .work-section { background: #0f1a1c !important; }
+html[data-theme="dark"] .journey-section { background: #142224 !important; }
+html[data-theme="dark"] .hero::before {
+  background: linear-gradient(145deg, rgba(37, 65, 60, .12), rgba(109, 83, 34, .10));
+}
+html[data-theme="dark"] .hero-orb { border-color: rgba(226, 189, 112, .18); }
+html[data-theme="dark"] .hero h1,
+html[data-theme="dark"] .section-heading h2,
+html[data-theme="dark"] .journey-heading h2,
+html[data-theme="dark"] .service-card h3,
+html[data-theme="dark"] .journey-card h3 { color: #f0f5f2 !important; }
+html[data-theme="dark"] .hero h1 em,
+html[data-theme="dark"] .section-heading h2 em,
+html[data-theme="dark"] .journey-heading h2 em { color: #e6c57e !important; }
+html[data-theme="dark"] .hero-intro,
+html[data-theme="dark"] .section-heading > p,
+html[data-theme="dark"] .section-heading-split > p,
+html[data-theme="dark"] .journey-heading > p,
+html[data-theme="dark"] .service-card p,
+html[data-theme="dark"] .services-bottom p,
+html[data-theme="dark"] .journey-card p,
+html[data-theme="dark"] .journey-bottom p { color: #c6d5cf !important; }
+html[data-theme="dark"] .eyebrow,
+html[data-theme="dark"] .hero-foot-label,
+html[data-theme="dark"] .card-index,
+html[data-theme="dark"] .journey-card-index { color: #e5c27c !important; }
+html[data-theme="dark"] .hero-note,
+html[data-theme="dark"] .hero-caption,
+html[data-theme="dark"] .promise,
+html[data-theme="dark"] .text-link { color: #ccd9d4 !important; }
+html[data-theme="dark"] .hero-foot { border-top-color: rgba(215, 230, 222, .18); }
+html[data-theme="dark"] .promise span,
+html[data-theme="dark"] .tiny-star { color: #e6c57e; }
+html[data-theme="dark"] .button-primary { color: #081c1b !important; background: #e5c27b !important; box-shadow: 0 8px 22px rgba(0, 0, 0, .22); }
+html[data-theme="dark"] .button-primary:hover { color: #071a19 !important; background: #f0d38f !important; }
+html[data-theme="dark"] .button-light { color: #102422 !important; background: #e7d7b1 !important; }
+
+/* Cards and borders. */
+html[data-theme="dark"] .services-grid,
+html[data-theme="dark"] .service-card,
+html[data-theme="dark"] .journey-cards,
+html[data-theme="dark"] .journey-card { border-color: #344b49 !important; }
+html[data-theme="dark"] .service-card { background: transparent; }
+html[data-theme="dark"] .service-card:hover,
+html[data-theme="dark"] .journey-card:hover { background: #1c3030 !important; }
+html[data-theme="dark"] .card-tags span { color: #d5e1dc !important; background: #243b38 !important; }
+html[data-theme="dark"] .icon-gold,
+html[data-theme="dark"] .icon-teal,
+html[data-theme="dark"] .icon-blue,
+html[data-theme="dark"] .icon-violet { color: #e7c77e; background: #263b37; }
+html[data-theme="dark"] .journey-card-icon { color: #d0e6dc; background: #263b37; }
+html[data-theme="dark"] .journey-card-foot { color: #b7c9c1; }
+html[data-theme="dark"] .journey-bottom { color: #eef4f1; background: #1b2c2d; border-color: #344b49; }
+html[data-theme="dark"] .journey-bottom-symbol { color: #e5c27c; background: #2a433d; }
+
+/* The approach, case study, and contact sections share a consistent dark mood. */
+html[data-theme="dark"] .approach-section { color: #eef4f1; background: linear-gradient(135deg, #0b2021, #112e2d) !important; }
+html[data-theme="dark"] .approach-lead > p,
+html[data-theme="dark"] .approach-step p,
+html[data-theme="dark"] .approach-signature { color: #c8d8d1 !important; }
+html[data-theme="dark"] .step-number,
+html[data-theme="dark"] .step-arrow,
+html[data-theme="dark"] .approach-signature b { color: #e6c57e; }
+html[data-theme="dark"] .case-study { background: #0c2324; box-shadow: 0 22px 50px rgba(0,0,0,.28); }
+html[data-theme="dark"] .case-copy { color: #f0f5f2; }
+html[data-theme="dark"] .case-summary,
+html[data-theme="dark"] .case-capabilities small { color: #c6d7d0 !important; }
+html[data-theme="dark"] .case-capabilities b { color: #f1f5f2; }
+html[data-theme="dark"] .case-visual { background: #1b3030 !important; }
+html[data-theme="dark"] .case-note { color: #bacdc5 !important; }
+html[data-theme="dark"] .cta-section { color: #f0f5f2; background: #0b2021 !important; background-image: linear-gradient(110deg, rgba(7, 22, 23, .98), rgba(13, 47, 45, .95)) !important; }
+html[data-theme="dark"] .cta-copy > p,
+html[data-theme="dark"] .cta-points span,
+html[data-theme="dark"] .direct-contact a { color: #d4e0da !important; }
+html[data-theme="dark"] .cta-copy h2 em { color: #e7c67f; }
+html[data-theme="dark"] .direct-contact small { color: #c2d2ca !important; }
+html[data-theme="dark"] .contact-card { color: #edf4f1; background: #172829 !important; border: 1px solid #344b49; box-shadow: 0 20px 55px rgba(0,0,0,.27); }
+html[data-theme="dark"] .contact-card h3,
+html[data-theme="dark"] .contact-kicker { color: #f0f5f2 !important; }
+html[data-theme="dark"] .contact-helper,
+html[data-theme="dark"] .form-row label,
+html[data-theme="dark"] .form-row label span,
+html[data-theme="dark"] .form-disclaimer { color: #c8d7d0 !important; }
+html[data-theme="dark"] .form-row input,
+html[data-theme="dark"] .form-row select,
+html[data-theme="dark"] .form-row textarea {
+  color: #eef4f1 !important;
+  background-color: #0f1d1f !important;
+  border-color: #49605a !important;
+}
+html[data-theme="dark"] .form-row input::placeholder,
+html[data-theme="dark"] .form-row textarea::placeholder { color: #a5bab1 !important; opacity: 1; }
+html[data-theme="dark"] .form-row select { color-scheme: dark; }
+html[data-theme="dark"] .contact-mark { color: #e4c27e; }
+html[data-theme="dark"] .site-footer { color: #e8f0eb !important; background: #091819 !important; border-top-color: #2c4441 !important; }
+html[data-theme="dark"] .footer-thought,
+html[data-theme="dark"] .footer-links a,
+html[data-theme="dark"] .footer-bottom { color: #c9d8d1 !important; }
+html[data-theme="dark"] .footer-links a:hover,
+html[data-theme="dark"] .footer-bottom a:hover { color: #e8c982 !important; }
+html[data-theme="dark"] .footer-bottom { border-top-color: #344845 !important; }
+
+/* The decorative software illustration stays light like a real product screen,
+   while its labels and controls retain contrast; floating labels adapt to the theme. */
+html[data-theme="dark"] .dashboard-window { background: #182c2c; border-color: #314746; box-shadow: 0 25px 55px rgba(0,0,0,.3); }
+html[data-theme="dark"] .window-top { color: #dbe7e0; background: #213634; border-bottom-color: #344e49; }
+html[data-theme="dark"] .window-brand { color: #eff4f1; }
+html[data-theme="dark"] .mini-symbol { background: #d7b56e; color: #132725; }
+html[data-theme="dark"] .dashboard-heading h3,
+html[data-theme="dark"] .ui-panel-heading { color: #e6f0ea; }
+html[data-theme="dark"] .metric-card,
+html[data-theme="dark"] .ui-panel,
+html[data-theme="dark"] .task-panel { background: #203332; border-color: #38504b; }
+html[data-theme="dark"] .metric-card > span,
+html[data-theme="dark"] .tiny-muted,
+html[data-theme="dark"] .task-line small { color: #b9cbc3; }
+html[data-theme="dark"] .metric-card strong,
+html[data-theme="dark"] .task-line b { color: #eef4f1; }
+html[data-theme="dark"] .journey-step { color: #bdcec7; }
+html[data-theme="dark"] .journey-step.done small,
+html[data-theme="dark"] .journey-step.active small { color: #ead7ae; }
+html[data-theme="dark"] .journey-connector { background: #4a625b; }
+html[data-theme="dark"] .floating-chip { color: #eef4f1; background: rgba(28, 47, 45, .97); border-color: #435c55; box-shadow: 0 9px 28px rgba(0,0,0,.2); }
+html[data-theme="dark"] .chip-icon { color: #f0d28b; background: #31413a; }
+
+/* Mobile: preserve a visible theme control in the header and increase small copy. */
 @media (max-width: 780px) {
-  .brand-heritage img { max-height: none; width: 100%; height: auto; }
+  .nav-wrap { position: relative; justify-content: space-between; gap: 8px; }
+  .theme-toggle--desktop { display: none !important; }
+  .theme-toggle--mobile { display: grid; width: 32px; height: 32px; flex-basis: 32px; flex-shrink: 0; }
+  .brand { width: min(210px, calc(100vw - 150px)) !important; flex-shrink: 1; }
+  .menu-toggle { flex: 0 0 40px; width: 40px; height: 40px; }
+  .primary-nav { z-index: 110; }
+  .primary-nav .nav-cta { margin-top: 8px; }
+  .journey-card p { font-size: 13px !important; line-height: 1.65; }
+  .journey-card h3 { font-size: 15px !important; }
+  .journey-card-foot { font-size: 10px !important; }
+  .approach-step h3 { font-size: 16px !important; }
+  .approach-step p { font-size: 14px !important; line-height: 1.65; }
+  .service-card p { font-size: 14px !important; line-height: 1.65; }
+  .case-capabilities b { font-size: 13px !important; }
+  .case-capabilities small { font-size: 12px !important; }
+  .footer-links a { font-size: 14px !important; }
+  html[data-theme="dark"] .primary-nav { background: #0f2021 !important; border-bottom-color: #2d4441 !important; }
+  html[data-theme="dark"] .primary-nav > a { color: #dce8e2 !important; }
+  html[data-theme="dark"] .primary-nav .nav-cta { color: #fff !important; background: #216f66 !important; }
+}
+@media (max-width: 480px) {
+  .brand { width: min(194px, calc(100vw - 145px)) !important; }
+  .brand-logo-tagline { font-size: clamp(4.4px, 1.42vw, 5.5px); letter-spacing: 0; }
+  .theme-toggle--mobile { width: 31px; height: 31px; flex-basis: 31px; }
+  .hero-intro { font-size: 16px !important; line-height: 1.72; }
+  .service-card p { font-size: 14px !important; }
+  .journey-card p { font-size: 13px !important; }
+  .journey-card h3 { font-size: 14px !important; }
+  .journey-bottom b { font-size: 14px !important; }
+  .journey-bottom p { font-size: 13px !important; }
+  .approach-step p { font-size: 14px !important; }
+  .case-note { font-size: 13px !important; }
+  html[data-theme="dark"] .site-footer { background: #091819 !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle { transition: none; }
+}
+
+/* ================================================================
+   VERSION 3 — SITE-WIDE READABILITY PASS
+   Clear hierarchy, comfortable reading sizes, and more generous line spacing.
+   Decorative dashboard microcopy remains compact because it is part of an
+   illustrative interface, not the site's primary reading content.
+   ================================================================ */
+:root {
+  --reading-size: 17px;
+  --reading-leading: 1.76;
+}
+
+body {
+  font-size: var(--reading-size);
+  line-height: var(--reading-leading);
+}
+
+/* Navigation and section labels should be clear without competing with headings. */
+.primary-nav > a { font-size: 15px; }
+.primary-nav .nav-cta { font-size: 15px; }
+.menu-toggle { min-width: 44px; min-height: 44px; }
+.eyebrow { font-size: 12px; line-height: 1.5; letter-spacing: .12em; }
+.hero-foot-label { font-size: 12px; line-height: 1.5; }
+.card-index, .case-badge, .case-number { font-size: 11px; }
+.journey-card-index { font-size: 15px; }
+.journey-card-foot { font-size: 11px; letter-spacing: .1em; }
+
+/* Main narrative copy. */
+.hero-intro { font-size: 19px; line-height: 1.78; }
+.hero-note { font-size: 14px; line-height: 1.65; }
+.hero-caption { font-size: 12px; line-height: 1.6; }
+.promise { font-size: 15px; line-height: 1.55; }
+.section-heading > p,
+.section-heading-split > p,
+.journey-heading > p { font-size: 17px; line-height: 1.78; }
+.service-card p { font-size: 16px; line-height: 1.75; }
+.services-bottom p { font-size: 16px; line-height: 1.7; }
+.approach-lead > p { font-size: 17px; line-height: 1.8; }
+.approach-step h3 { font-size: 19px; line-height: 1.35; }
+.approach-step p { font-size: 16px; line-height: 1.75; }
+.approach-signature { font-size: 12px; line-height: 1.6; }
+.case-summary { font-size: 16px; line-height: 1.8; }
+.case-capabilities b { font-size: 14px; line-height: 1.4; }
+.case-capabilities small { font-size: 13px; line-height: 1.65; }
+.case-link { font-size: 15px; line-height: 1.6; }
+.case-note { font-size: 14px; line-height: 1.75; }
+.image-caption { font-size: 12px; line-height: 1.6; }
+.journey-card h3 { font-size: 17px; line-height: 1.35; }
+.journey-card p { font-size: 15px; line-height: 1.72; }
+.journey-bottom b { font-size: 15px; line-height: 1.5; }
+.journey-bottom p { font-size: 15px; line-height: 1.75; }
+.cta-copy > p { font-size: 17px; line-height: 1.82; }
+.cta-points span { font-size: 15px; line-height: 1.6; }
+.direct-contact a { font-size: 15px; line-height: 1.55; }
+.direct-contact small { font-size: 11px; }
+.contact-card h3 { font-size: 24px; line-height: 1.3; }
+.contact-helper { font-size: 15px; line-height: 1.7; }
+.form-row label { font-size: 15px; line-height: 1.5; }
+.form-row input, .form-row select, .form-row textarea { font-size: 16px; line-height: 1.55; }
+.form-disclaimer { font-size: 13px; line-height: 1.65; }
+.footer-thought { font-size: 16px; line-height: 1.8; }
+.footer-links a { font-size: 15px; }
+.footer-bottom { font-size: 13px; line-height: 1.7; }
+.button, .text-link { font-size: 15px; }
+
+/* Slightly roomier reading blocks; no unnecessary enlargement of the logo or headings. */
+.service-card { padding-inline: 25px; }
+.approach-step { row-gap: 12px; }
+.journey-card { padding-inline: 17px; }
+.journey-bottom { padding: 21px 25px; }
+.form-row input, .form-row select { min-height: 48px; }
+.form-row textarea { min-height: 112px; }
+
+@media (max-width: 1080px) {
+  .journey-card { padding-inline: 18px; }
+  .service-card { padding-inline: 22px; }
+}
+
+@media (max-width: 780px) {
+  :root { --reading-size: 16.5px; --reading-leading: 1.76; }
+  .primary-nav > a { font-size: 16px !important; }
+  .primary-nav .nav-cta { font-size: 16px !important; }
+  .eyebrow { font-size: 11.5px !important; line-height: 1.55; }
+  .hero-intro { font-size: 18px !important; line-height: 1.76; }
+  .hero-note { font-size: 14px; }
+  .hero-caption { font-size: 12px !important; }
+  .hero-foot-label { font-size: 12px; }
+  .promise { font-size: 14px; }
+  .section-heading > p,
+  .section-heading-split > p,
+  .journey-heading > p { font-size: 16.5px !important; line-height: 1.78; }
+  .service-card p { font-size: 15.5px !important; line-height: 1.75; }
+  .services-bottom p { font-size: 16px; }
+  .approach-lead > p { font-size: 16.5px !important; line-height: 1.8; }
+  .approach-step h3 { font-size: 18px !important; }
+  .approach-step p { font-size: 15.5px !important; line-height: 1.75; }
+  .case-summary { font-size: 16px; }
+  .case-capabilities b { font-size: 14px !important; }
+  .case-capabilities small { font-size: 13.5px !important; line-height: 1.65; }
+  .case-link { font-size: 15px; }
+  .case-note { font-size: 14px !important; }
+  .image-caption { font-size: 12px !important; }
+  .journey-card { min-height: 220px; padding: 19px 17px 17px; }
+  .journey-card h3 { font-size: 16px !important; }
+  .journey-card p { font-size: 14.5px !important; line-height: 1.72; }
+  .journey-card-foot { font-size: 11px !important; }
+  .journey-bottom b { font-size: 15px !important; }
+  .journey-bottom p { font-size: 15px !important; line-height: 1.75; }
+  .cta-copy > p { font-size: 16.5px !important; }
+  .cta-points span { font-size: 15px; }
+  .contact-card h3 { font-size: 23px !important; }
+  .contact-helper { font-size: 15px; }
+  .form-row label { font-size: 15px; }
+  .form-row input, .form-row select, .form-row textarea { font-size: 16px; }
+  .footer-links a { font-size: 15px !important; }
+  .footer-bottom { font-size: 12.5px; }
+}
+
+@media (max-width: 480px) {
+  :root { --reading-size: 16px; --reading-leading: 1.75; }
+  .container { width: calc(100% - 34px); }
+  .section-pad { padding: 68px 0; }
+  .eyebrow { font-size: 11px !important; letter-spacing: .09em; }
+  .hero { padding-top: 54px; }
+  .hero h1 { font-size: clamp(41px, 10.5vw, 47px); line-height: 1.08; }
+  .hero-intro { font-size: 17px !important; line-height: 1.75; }
+  .hero-note { font-size: 13.5px; }
+  .hero-foot { gap: 14px 16px; }
+  .promise { align-items: flex-start; font-size: 13.5px; }
+  .section-heading h2, .approach-lead h2, .cta-copy h2, .journey-heading h2 { font-size: clamp(34px, 8.8vw, 39px); line-height: 1.12; }
+  .section-heading > p,
+  .section-heading-split > p,
+  .journey-heading > p { font-size: 16px !important; line-height: 1.78; }
+  .service-card,
+  .service-card:first-child,
+  .service-card:nth-child(3) { padding: 25px 21px; }
+  .service-card h3 { font-size: 20px; }
+  .service-card p { font-size: 15.5px !important; line-height: 1.75; }
+  .card-tags span { font-size: 12px; }
+  .services-bottom p { font-size: 15.5px; }
+  .approach-lead > p { font-size: 16px !important; }
+  .approach-step { grid-template-columns: 30px minmax(0,1fr) 20px; gap: 12px; padding-block: 23px; }
+  .approach-step h3 { font-size: 17px !important; line-height: 1.35; }
+  .approach-step p { font-size: 15px !important; line-height: 1.75; }
+  .approach-signature { align-items: flex-start; font-size: 11px; }
+  .case-copy { padding: 25px 21px; }
+  .case-copy h3 { font-size: clamp(29px, 7.2vw, 36px); }
+  .case-summary { font-size: 15.5px; }
+  .case-capabilities { grid-template-columns: 1fr; gap: 15px; }
+  .case-capabilities b { font-size: 14px !important; }
+  .case-capabilities small { font-size: 13.5px !important; }
+  .case-note { font-size: 14px !important; }
+  .image-caption { font-size: 11.5px !important; }
+  .journey-card { min-height: 224px; padding: 17px 14px 15px; }
+  .journey-card h3 { font-size: 15.5px !important; }
+  .journey-card p { font-size: 14px !important; line-height: 1.72; }
+  .journey-card-foot { font-size: 10.5px !important; letter-spacing: .07em; }
+  .journey-bottom { gap: 12px; padding: 17px 15px; }
+  .journey-bottom-symbol { width: 36px; height: 36px; }
+  .journey-bottom b { font-size: 14.5px !important; line-height: 1.5; }
+  .journey-bottom p { font-size: 14.5px !important; line-height: 1.72; }
+  .cta-section { padding: 68px 0; }
+  .cta-copy > p { font-size: 16px !important; line-height: 1.8; }
+  .cta-points span { font-size: 14.5px; }
+  .direct-contact a { font-size: 14.5px; }
+  .contact-card { padding: 23px 18px; }
+  .contact-card h3 { font-size: 22px !important; }
+  .contact-helper { font-size: 14.5px; }
+  .form-row label { font-size: 14.5px; }
+  .form-row input, .form-row select, .form-row textarea { font-size: 16px; }
+  .form-disclaimer { font-size: 13px; }
+  .footer-main { gap: 25px; }
+  .footer-thought { font-size: 15.5px; }
+  .footer-links a { font-size: 15px !important; }
+  .footer-bottom { font-size: 12px; }
+  .button, .text-link { font-size: 15px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle { transition: none; }
 }

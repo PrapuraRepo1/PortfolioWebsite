@@ -69,10 +69,36 @@
     });
   }
 
-  // Trial 2 uses one carefully tuned dark theme.
+  // Version 3 theme toggle. Both header controls stay in sync on all layouts.
+  const themeButtons = Array.from(document.querySelectorAll("[data-theme-toggle]"));
+  const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+
+  function applyTheme(theme, save = true) {
+    const selectedTheme = theme === "dark" ? "dark" : "light";
+    document.documentElement.dataset.theme = selectedTheme;
+    const isDark = selectedTheme === "dark";
+    themeButtons.forEach((button) => {
+      const label = isDark ? "Switch to light theme" : "Switch to dark theme";
+      button.setAttribute("aria-label", label);
+      button.setAttribute("title", label);
+      button.setAttribute("aria-pressed", String(isDark));
+      const icon = button.querySelector(".theme-toggle-icon");
+      if (icon) icon.textContent = isDark ? "☀" : "☾";
+    });
+    if (themeColorMeta) themeColorMeta.setAttribute("content", isDark ? "#101b1d" : "#f7f8f4");
+    if (save) {
+      try { localStorage.setItem("prapura-theme", selectedTheme); } catch (_) { /* Private browsing may block storage. */ }
+    }
+  }
+
+  themeButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const currentTheme = document.documentElement.dataset.theme || "light";
+      applyTheme(currentTheme === "dark" ? "light" : "dark");
+    });
+  });
+  applyTheme(document.documentElement.dataset.theme || "light", false);
 
   const year = document.querySelector("#year");
   if (year) year.textContent = String(new Date().getFullYear());
-
-
 })();
